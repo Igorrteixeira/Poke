@@ -1,24 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import CardTeam from '../../components/CardTeam/CardTeam'
+import usePokeTeam from '../../hook/usePokeTeam'
 import useTeam from '../../hook/useTeam'
 
 
 
 const Team = () => {
-  const [team, setTeam]= useState<string>('')
+  const [newTeam, setNewTeam]= useState<string>('')
   const {createTeam} = useTeam()
+  const {getPokeTeam,pokeTeam} = usePokeTeam()
+  useEffect(()=>getPokeTeam(),[])
+
+  console.log(pokeTeam)
+
 
   const onchange = (e:React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
-    setTeam(value)
+    setNewTeam(value)
   }
 
   const submit = (e:any) => {
     e.preventDefault()
-      createTeam(team)
-      setTeam('')   
+      createTeam(newTeam)
+      setNewTeam('')   
   }
-
- console.log(team)
  
   return (
     <div>
@@ -30,12 +35,12 @@ const Team = () => {
         type="text"
         name='team'
         onChange={onchange}
-        value={team}
+        value={newTeam}
         />
         <button type='submit'>Criar</button>
       </form>
 
-      
+      <CardTeam/>
 
     </div>
   )

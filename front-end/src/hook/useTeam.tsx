@@ -12,7 +12,7 @@ const useTeam = () => {
 
     const getTeam = () => {
         axios
-        .get(`${URL_TEAM}`)
+        .get(`${URL_TEAM}team`)
         .then(res => setTeam(res.data.resposne))
         .catch(error => alert(error.message))
     }
@@ -20,7 +20,7 @@ const useTeam = () => {
     const createTeam = (name:string) => {
         const body = {name,}  
         axios
-        .post(`${URL_TEAM}/create`,body)
+        .post(`${URL_TEAM}team/create`,body)
         .then(res => alert(res.data.response)) 
         .catch(error => alert(error.message))
     }

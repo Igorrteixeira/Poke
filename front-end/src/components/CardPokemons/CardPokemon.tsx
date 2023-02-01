@@ -6,6 +6,7 @@ import { IconType } from './types';
 
 interface Props {
   name:string
+  add:()=>void
 }
 
 
@@ -31,9 +32,8 @@ const CardPokemon = (props:Props) => {
         <S.BackImg src={backImg} alt="" />
       </S.ContImg>
       </S.ContItens>
-      <button>Adicionar</button>
-      <button>Remover</button>
-      
+      <button onClick={props.add}>Adicionar</button>
+  
     </S.ContainerCard>
   )
 }
