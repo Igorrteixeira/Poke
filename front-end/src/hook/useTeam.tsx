@@ -7,8 +7,6 @@ interface Team {
     name:string
 }
 
-
-
 const useTeam = () => {
     const [team,setTeam] = useState<Team[]>([])
 
