@@ -1,4 +1,5 @@
 
+
 interface Team {
     id:string,
     name:string
@@ -7,7 +8,6 @@ interface Team {
 interface Props {
     team:Team[],
     button:()=>void
- 
 }
 
 const SelectTeam = (props:Props) => {
@@ -20,7 +20,8 @@ const SelectTeam = (props:Props) => {
         {props.team.map(item=> 
         <option key={item.id} value="">{item.name}</option> )}
         </select>
-        <button onClick={props.button}>Adicionar novo time</button>
+
+        <button onClick={props.button}>Times</button>
     </div>
   )
 }

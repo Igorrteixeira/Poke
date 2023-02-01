@@ -6,8 +6,7 @@ POST http://localhost:3003/team/create
 Content-Type: application/json
 
 {
-    "id":"de2176bf-de19-41e4-97ab-782f2c40a936",
-    "name":"toff"
+    "name":"topp"
 }
 
 

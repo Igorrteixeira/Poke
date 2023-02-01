@@ -10,7 +10,6 @@ const usePokemon = () => {
         type:'',
     })
     
-
     const getPokes = () => {
         axios
         .get(`${URL_POKE}`)

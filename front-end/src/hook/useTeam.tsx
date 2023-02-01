@@ -10,15 +10,21 @@ interface Team {
 const useTeam = () => {
     const [team,setTeam] = useState<Team[]>([])
 
-    const getTeam = (url:string) => {
+    const getTeam = () => {
         axios
-        .get(`${URL_TEAM}${url}`)
-        .then(res => setTeam(res.data.resposne
-            ))
-        .catch(error => alert("Erro no servidor"))
+        .get(`${URL_TEAM}`)
+        .then(res => setTeam(res.data.resposne))
+        .catch(error => alert(error.message))
     }
 
-    return {getTeam,team}
+    const createTeam = (name:string) => {
+        const body = {name,}  
+        axios
+        .post(`${URL_TEAM}/create`,body)
+        .then(res => alert(res.data.response)) 
+        .catch(error => alert(error.message))
+    }
+    return {getTeam,team,createTeam}
 }
 
 export default useTeam
