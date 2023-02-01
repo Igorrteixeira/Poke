@@ -15,7 +15,6 @@ const CardPokemon = (props:Props) => {
     useEffect(()=>{getPokeById(name)},[name])
 
     const {type,order} = pokeDetails
-    console.log(type)
   return (
     <S.ContainerCard background={type}>
       <S.ContItens>

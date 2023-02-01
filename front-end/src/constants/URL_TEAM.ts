@@ -1,0 +1,1 @@
+export const URL_TEAM = "http://localhost:3003/"
