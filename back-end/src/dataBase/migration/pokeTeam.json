@@ -1,0 +1,27 @@
+[
+    {
+        "id": "de2176bf-de19-41e4-97ab-782f2c40a985",
+        "poke_id":"teste1",
+        "team_id":"de2176bf-de19-41e4-97ab-782f2c40a934"
+    },
+    {
+        "id": "de2176bf-de19-41e4-97ab-782f2c40a958",
+        "poke_id":"teste2",
+        "team_id":"de2176bf-de19-41e4-97ab-782f2c40a934"
+    },
+    {
+        "id": "de2176bf-de19-41e4-97ab-782f2c40a944",
+        "poke_id":"teste3",
+        "team_id":"de2176bf-de19-41e4-97ab-782f2c40a934"
+    },
+    {
+        "id": "de2176bf-de19-41e4-97ab-782f2c40a955",
+        "poke_id":"teste4",
+        "team_id":"de2176bf-de19-41e4-97ab-782f2c40a934"
+    },
+    {
+        "id": "de2176bf-de19-41e4-97ab-782f2c40a911",
+        "poke_id":"teste5",
+        "team_id":"de2176bf-de19-41e4-97ab-782f2c40a934"
+    }
+]

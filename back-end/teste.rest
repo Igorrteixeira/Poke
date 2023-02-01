@@ -1,0 +1,30 @@
+GET http://localhost:3003/team
+
+###
+
+POST http://localhost:3003/team/create
+Content-Type: application/json
+
+{
+    "id":"de2176bf-de19-41e4-97ab-782f2c40a936",
+    "name":"toff"
+}
+
+
+###
+
+GET http://localhost:3003/poke-team
+
+###
+
+POST http://localhost:3003/poke-team/create
+Content-Type: application/json
+
+{
+    "poke_id": "teste32",
+    "team_id": "de2176bf-de19-41e4-97ab-782f2c40a934"
+}
+
+###
+
+DELETE http://localhost:3003/poke-team/delete/de2176bf-de19-41e4-97ab-782f2c40a958
