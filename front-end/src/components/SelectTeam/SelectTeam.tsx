@@ -1,4 +1,4 @@
-
+import * as S from './Style'
 
 interface Team {
     id:string,
@@ -16,9 +16,9 @@ const SelectTeam = (props:Props) => {
     <div>
         <label htmlFor="team">Selecione um time</label>
         <select 
-        name="" 
         onChange={(e)=>props.setTeamId(e.target.value)}
         id="team">
+          <option value="">Times</option>
         {props.team.map(item=> 
         <option key={item.id} value={item.id}>{item.name}</option> )}
         </select>

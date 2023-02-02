@@ -32,10 +32,15 @@ const usePokeTeam = () => {
         .catch(error => alert(error.response.data.message))
     }
     const deletePokeTeam = (id:string) => {
+        if(confirm('Deseja realmente deletar ?')){
         axios
         .delete(`${URL_TEAM}poke-team/delete/${id}`)
-        .then(res => alert(res.data.response)) 
+        .then(res => {
+            alert(res.data.response)
+            getPokeTeam()
+        })
         .catch(error => alert(error.response.data.message))
+    }
     }
     return {getPokeTeam,pokeTeam,createPokeTeam,deletePokeTeam}
 }

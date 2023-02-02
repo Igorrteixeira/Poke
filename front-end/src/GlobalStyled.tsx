@@ -7,5 +7,9 @@ const GlobalStyled = createGlobalStyle`
         padding: 0;
     }
 
+    button{
+        cursor: pointer;
+    }
+
 `
 export default GlobalStyled

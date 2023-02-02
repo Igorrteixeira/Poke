@@ -7,12 +7,15 @@ import useTeam from '../../hook/useTeam'
 
 const Team = () => {
   const [newTeam, setNewTeam]= useState<string>('')
-  const {createTeam} = useTeam()
-  const {getPokeTeam,pokeTeam} = usePokeTeam()
+  const [teamId, setTeamId]= useState<string>('')
+
+  const {createTeam,getTeam,team} = useTeam()
+  useEffect(()=>getTeam,[])
+
+  const {getPokeTeam,pokeTeam,deletePokeTeam} = usePokeTeam()
   useEffect(()=>getPokeTeam(),[])
 
-  console.log(pokeTeam)
-
+console.log(teamId)
 
   const onchange = (e:React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
@@ -40,8 +43,22 @@ const Team = () => {
         <button type='submit'>Criar</button>
       </form>
 
-      <CardTeam/>
+      <label htmlFor="team">Selecione um time</label>
+        <select 
+        onChange={(e)=>setTeamId(e.target.value)}
+        id="team">
+        {team.map(item=> 
+        <option key={item.id} value={item.id}>{item.name}</option> )}
+        </select>
 
+        {pokeTeam.map(item=>{
+            if(item.team_id === teamId){
+              return <CardTeam 
+              pokeId={item.poke_id} 
+              delete={()=>deletePokeTeam(item.id)}/>
+            }
+        })}
+    
     </div>
   )
 }
