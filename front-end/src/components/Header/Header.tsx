@@ -1,9 +1,11 @@
-import React from 'react'
+import logo from '../../assets/logo.png'
 import * as S from "./Style"
 
 const Header = () => {
   return (
-    <S.Container>Header</S.Container>
+    <S.Container>
+      <S.ContImg><img src={logo} alt="" /></S.ContImg>
+    </S.Container>
   )
 }
 

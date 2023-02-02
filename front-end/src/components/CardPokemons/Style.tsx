@@ -9,6 +9,7 @@ export const ContainerCard = styled.div<Props>`
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 280px;
     height: 150px;
     background-color: ${(props) => backgroundPoke(props.background)}
@@ -19,6 +20,13 @@ export const ContImg = styled.div`
   display: flex;
   flex-direction: column-reverse;
 `;
+
+export const Content = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+`
 
 export const ImgPoke = styled.img`
   position: absolute;
@@ -43,8 +51,8 @@ export const TypeImage = styled.img`
 export const TitleType = styled.p<Props>`
   display: flex;
   align-items: center;
-  margin: 0;
-  padding: 2px 10px 5px 2px;
+  margin: 5px;
+  padding: 5px 10px 5px 6px;
   gap: 3px;
   border-radius: 10px;
   width: 50px;
@@ -62,3 +70,18 @@ export const ContItens = styled.div`
   justify-content: space-around;
 `;
 
+export const AddButton = styled.button`
+    display: flex;
+    width: 100px;
+    position: absolute;
+    bottom: 5px;
+    left: 30px;
+    align-items: center;
+    gap: 8px;
+    background: #757577;
+    border: none;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+
+`

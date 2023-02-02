@@ -22,7 +22,7 @@ const Home = () => {
     useEffect(()=>getTeam(),[])
 
   return (
-    <div>
+    <S.Container>
       <Header/>
 
       <SelectTeam 
@@ -39,7 +39,7 @@ const Home = () => {
         />)}
       </S.ContCards>
         
-    </div>
+    </S.Container>
   )
 }
 

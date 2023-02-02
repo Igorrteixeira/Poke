@@ -1,31 +1,38 @@
-import * as S from './Style'
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import * as S from "./Style";
 
 interface Team {
-    id:string,
-    name:string
+  id: string;
+  name: string;
 }
 
 interface Props {
-    team:Team[],
-    button:()=>void
-    setTeamId:React.Dispatch<React.SetStateAction<string>>
+  team: Team[];
+  button: () => void;
+  setTeamId: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const SelectTeam = (props:Props) => {
+const SelectTeam = (props: Props) => {
   return (
-    <div>
+    <S.Container>
+      <S.SelectTeam>
         <label htmlFor="team">Selecione um time</label>
-        <select 
-        onChange={(e)=>props.setTeamId(e.target.value)}
-        id="team">
+        <select onChange={(e) => props.setTeamId(e.target.value)} id="team">
           <option value="">Times</option>
-        {props.team.map(item=> 
-        <option key={item.id} value={item.id}>{item.name}</option> )}
+          {props.team.map((item) => (
+            <option key={item.id} value={item.id}>
+              {item.name}
+            </option>
+          ))}
         </select>
+      </S.SelectTeam>
 
-        <button onClick={props.button}>Meus times</button>
-    </div>
-  )
-}
+      <S.Button onClick={props.button}>
+        Meus times
+        <BsFillArrowRightCircleFill />
+      </S.Button>
+    </S.Container>
+  );
+};
 
-export default SelectTeam
+export default SelectTeam;
