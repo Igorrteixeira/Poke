@@ -1,6 +1,7 @@
 import axios from 'axios'
 import  { useState } from 'react'
 import { URL_TEAM } from '../constants/URL_TEAM'
+import usePokeTeam from './usePokeTeam'
 
 interface Team {
     id:string,
@@ -9,6 +10,7 @@ interface Team {
 
 const useTeam = () => {
     const [team,setTeam] = useState<Team[]>([])
+    const {getPokeTeam} = usePokeTeam()
 
     const getTeam = () => {
         axios
@@ -31,6 +33,7 @@ const useTeam = () => {
         .then(res => {
             alert(res.data.response)
             getTeam()
+            getPokeTeam()
         }) 
         .catch(error => alert(error.response.data.message || error.message ))
     }
