@@ -16,9 +16,9 @@ export const ContForm = styled.div`
     gap: 5px;
   }
   @media (min-width: 320px) and (max-width: 767px) {
-      flex-direction: column;
-      gap: 15px;
-}
+    flex-direction: column;
+    gap: 15px;
+  }
 `;
 export const ContSelect = styled.div`
   display: flex;

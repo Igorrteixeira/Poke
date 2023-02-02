@@ -1,19 +1,18 @@
 import styled from "styled-components";
 import { backgroundPoke, backgroundType } from "../../services/BackGround";
 interface Props {
-    background:string
+  background: string;
 }
 export const ContainerCard = styled.div<Props>`
-    color: white;
-    margin: 30px auto;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 280px;
-    height: 150px;
-    background-color: ${(props) => backgroundPoke(props.background)}
-        
+  color: white;
+  margin: 30px auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 280px;
+  height: 150px;
+  background-color: ${(props) => backgroundPoke(props.background)};
 `;
 
 export const ContImg = styled.div`
@@ -22,11 +21,10 @@ export const ContImg = styled.div`
 `;
 
 export const Content = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
 
 export const ImgPoke = styled.img`
   position: absolute;
@@ -57,10 +55,10 @@ export const TitleType = styled.p<Props>`
   border-radius: 10px;
   width: 50px;
   text-align: center;
-  background-color: ${(props) => backgroundType(props.background)}
-  `
+  background-color: ${(props) => backgroundType(props.background)};
+`;
 
-  export const BackImg  = styled.img`
+export const BackImg = styled.img`
   width: 140px;
   height: 120px;
 `;
@@ -71,17 +69,16 @@ export const ContItens = styled.div`
 `;
 
 export const AddButton = styled.button`
-    display: flex;
-    width: 100px;
-    position: absolute;
-    bottom: 5px;
-    left: 30px;
-    align-items: center;
-    gap: 8px;
-    background: #757577;
-    border: none;
-    color: white;
-    padding: 8px;
-    border-radius: 5px;
-
-`
+  display: flex;
+  width: 100px;
+  position: absolute;
+  bottom: 5px;
+  left: 30px;
+  align-items: center;
+  gap: 8px;
+  background: #757577;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+`;

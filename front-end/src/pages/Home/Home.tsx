@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import * as S from './Style'
 import CardPokemon from '../../components/CardPokemons/CardPokemon'
 import Header from '../../components/Header/Header'

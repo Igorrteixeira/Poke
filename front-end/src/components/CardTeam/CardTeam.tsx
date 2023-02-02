@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import usePokemon from "../../hook/usePokemon";
-import {TiDeleteOutline} from 'react-icons/ti'
+import { TiDeleteOutline } from "react-icons/ti";
 
 import * as S from "./Style";
 
 interface Props {
   pokeId: string;
-  delete:()=>void
+  delete: () => void;
 }
 const CardTeam = (props: Props) => {
   console.log(props);
@@ -23,7 +23,9 @@ const CardTeam = (props: Props) => {
         <S.Img src={pokeDetails.img} alt={`Imagem pokemon ${props.pokeId}`} />
       </S.ContImg>
       <S.Name>{props.pokeId.toUpperCase()}</S.Name>
-      <S.Delete onClick={props.delete} ><TiDeleteOutline size={'20px'}/></S.Delete >
+      <S.Delete onClick={props.delete}>
+        <TiDeleteOutline size={"20px"} />
+      </S.Delete>
     </S.Container>
   );
 };

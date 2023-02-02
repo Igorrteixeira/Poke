@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { MdCatchingPokemon } from "react-icons/md";
 import usePokemon from "../../hook/usePokemon";
 import backImg from "../../Assets/fundo-pok.png";

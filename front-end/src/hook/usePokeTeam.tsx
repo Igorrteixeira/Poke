@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { URL_TEAM } from '../constants/URL_TEAM'
 
 interface Team {
@@ -7,8 +7,6 @@ interface Team {
     poke_id:string
     team_id:string
 }
-
-
 
 const usePokeTeam = () => {
     const [pokeTeam,setPokeTeam] = useState<Team[]>([])
@@ -31,6 +29,7 @@ const usePokeTeam = () => {
         .then(res => alert(res.data.response)) 
         .catch(error => alert(error.response.data.message))
     }
+    
     const deletePokeTeam = (id:string) => {
         if(confirm('Deseja realmente deletar ?')){
         axios
