@@ -15,7 +15,7 @@ const Team = () => {
 
   const navigate = useNavigate()
 
-  const {createTeam,getTeam,team} = useTeam()
+  const {createTeam,getTeam,deleteTeam,team} = useTeam()
   useEffect(()=>getTeam,[])
 
   const {getPokeTeam,pokeTeam,deletePokeTeam} = usePokeTeam()
@@ -42,17 +42,19 @@ const Team = () => {
         <BsFillArrowLeftCircleFill/>
       </S.Button>
       <S.ContSelect>
-        <label htmlFor="team">Selecione um time para ver</label>
+        <label htmlFor="team">Ver times</label>
             <select
             onChange={(e)=>setTeamId(e.target.value)}
             id="team">
+              <option value="">Times</option>
             {team.map(item=>
             <option key={item.id} value={item.id}>{item.name}</option> )}
             </select>
+            <S.Button onClick={()=>deleteTeam(teamId)}>Deletar time</S.Button>
       </S.ContSelect>
             
         <form onSubmit={submit}>
-          <label htmlFor="team">Criar novo time</label>
+          <label htmlFor="team">Criar time</label>
           <input
           id='team'
           type="text"
@@ -62,17 +64,18 @@ const Team = () => {
           value={newTeam}
           />
           <S.Button type='submit'>Criar <MdAddCircle/></S.Button>
-        </form>
-        
+        </form> 
       </S.ContForm>
 
-        {pokeTeam.map(item=>{
-            if(item.team_id === teamId){
-              return <CardTeam 
-              pokeId={item.poke_id} 
-              delete={()=>deletePokeTeam(item.id)}/>
-            }
-        })}
+        <S.CardsPoke>
+          {pokeTeam.map(item=>{
+              if(item.team_id === teamId){
+                return <CardTeam
+                pokeId={item.poke_id}
+                delete={()=>deletePokeTeam(item.id)}/>
+              }
+          })}
+        </S.CardsPoke>
     
     </S.Container>
   )

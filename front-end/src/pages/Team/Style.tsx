@@ -15,6 +15,10 @@ export const ContForm = styled.div`
     align-items: center;
     gap: 5px;
   }
+  @media (min-width: 320px) and (max-width: 767px) {
+      flex-direction: column;
+      gap: 15px;
+}
 `;
 export const ContSelect = styled.div`
   display: flex;
@@ -30,4 +34,11 @@ export const Button = styled.button`
   color: white;
   padding: 8px;
   border-radius: 5px;
+`;
+
+export const CardsPoke = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 `;

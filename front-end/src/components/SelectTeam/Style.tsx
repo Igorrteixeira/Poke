@@ -4,6 +4,11 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-around;
   margin: 10px;
+  @media (min-width: 300px) and (max-width: 350px) {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
 `;
 
 export const SelectTeam = styled.div`

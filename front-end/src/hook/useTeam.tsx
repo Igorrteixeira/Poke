@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { URL_TEAM } from '../constants/URL_TEAM'
 
 interface Team {
@@ -14,7 +14,7 @@ const useTeam = () => {
         axios
         .get(`${URL_TEAM}team`)
         .then(res => setTeam(res.data.resposne))
-        .catch(error => alert(error.message))
+        .catch(error => alert(error.response.data.message || error.message ))
     }
 
     const createTeam = (name:string) => {
@@ -22,9 +22,20 @@ const useTeam = () => {
         axios
         .post(`${URL_TEAM}team/create`,body)
         .then(res => alert(res.data.response)) 
-        .catch(error => alert(error.message))
+        .catch(error => alert(error.response.data.message || error.message ))
     }
-    return {getTeam,team,createTeam}
+
+    const deleteTeam = (id:string) => {
+        axios
+        .delete(`${URL_TEAM}team/delete/${id}`,)
+        .then(res => {
+            alert(res.data.response)
+            getTeam()
+        }) 
+        .catch(error => alert(error.response.data.message || error.message ))
+    }
+
+    return {getTeam,team,createTeam,deleteTeam}
 }
 
 export default useTeam

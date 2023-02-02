@@ -36,11 +36,11 @@ export class PokeTeamData extends DataBase {
         return response
     }
 
-    delete = async (poke_id: string): Promise<number> => {
+    delete = async (id: string): Promise<number> => {
         const response = await this.getConnection()
             .from(PokeTeamData.TABLE_POKETEAM)
             .delete()
-            .where({ poke_id })
+            .where({ id })
         return response
     }
 }
