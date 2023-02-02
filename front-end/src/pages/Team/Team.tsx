@@ -16,7 +16,7 @@ const Team = () => {
   const navigate = useNavigate()
 
   const {createTeam,getTeam,deleteTeam,team} = useTeam()
-  useEffect(()=>getTeam,[])
+  useEffect(()=>getTeam(),[])
 
   const {getPokeTeam,pokeTeam,deletePokeTeam} = usePokeTeam()
   useEffect(()=>getPokeTeam(),[])
