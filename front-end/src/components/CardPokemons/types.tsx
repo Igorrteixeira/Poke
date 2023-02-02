@@ -18,12 +18,9 @@ import water from "../../Assets/icons-tipo/water.png";
 import steel from "../../Assets/icons-tipo/steel.png";
 import { TypeImage } from "./Style";
 
-interface Props {
-  img: string;
-}
 
-export const IconType = (props: Props) => {
-  switch (props.img) {
+export const IconType = (type:string) => {
+  switch (type) {
     case "grass":
       return <TypeImage src={grass} />;
     case "bug":

@@ -25,7 +25,7 @@ const CardPokemon = (props: Props) => {
           <h4># {order}</h4>
           <h3>{name.toUpperCase()}</h3>
           <S.TitleType background={type}>
-            <IconType img={type} /> {type}
+            {IconType(type)}  {type}
           </S.TitleType>
         </S.Content>
 
